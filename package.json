@@ -25,7 +25,9 @@
     "index.js"
   ],
   "dependencies": {
-    "@rdfjs/data-model": "^1.1.1"
+    "@rdfjs/data-model": "^1.1.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "pre-commit": [
     "build",
@@ -62,7 +64,7 @@
     "test-watch": "jest ${1} --watch",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "tslint index.ts lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
-    "build": "tsc",
+    "build": "tsc | webpack",
     "validate": "npm ls",
     "prepare": "npm run build",
     "version": "manual-git-changelog onversion"

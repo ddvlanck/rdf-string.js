@@ -1,0 +1,1 @@
+window.rdfstring = require('./index.ts');
